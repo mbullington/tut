@@ -1,0 +1,8 @@
+name: dartkit
+description: Core Dart utilities.
+version: 1.0.0
+environment:
+  sdk: '>=2.0.0-dev.54 <3.0.0'
+dependencies:
+  intl: "^0.15.6"
+  quiver: ^2.0.0+1

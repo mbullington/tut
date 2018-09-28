@@ -1,0 +1,14 @@
+name: telefrag
+description: Lean state management for Flutter apps.
+version: 1.0.0
+author: Michael Bullington <mikebullingtn@gmail.com>
+environment:
+  sdk: '>=2.0.0-dev.54 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  meta: "^1.1.5"
+  dartkit:
+    path: ../dartkit
+flutter:
+  uses-material-design: true
