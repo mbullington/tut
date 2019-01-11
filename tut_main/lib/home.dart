@@ -16,7 +16,7 @@ const _kPhysics = const AlwaysScrollableScrollPhysics(parent: const BouncingScro
 // based off of transformer_page_view
 // https://github.com/best-flutter/transformer_page_view
 class ZoomOutPageTransformer extends PageTransformer {
-  static const double MIN_SCALE = 0.94;
+  static const double MIN_SCALE = 0.84;
   static const double MIN_ALPHA = 0.9;
 
   @override
@@ -74,6 +74,8 @@ class _Home extends State<Home> {
 
   final List<Page> pages = [
     MyRequestsPage(),
+    RequestsPage(),
+    MessagesPage(),
     AccountPage()
   ];
 

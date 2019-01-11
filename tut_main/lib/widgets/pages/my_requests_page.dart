@@ -1,7 +1,7 @@
 part of tut.widgets;
 
 class MyRequestsPage extends Page {
-  final IconData icon = OMIcons.book;
+  final IconData icon = OMIcons.helpOutline;
   final String title = "My requests";
 
   MyRequestsPage({Key key}) : super(key: key);
@@ -29,11 +29,6 @@ class _MyRequestsPage extends State<MyRequestsPage> {
   Widget _itemBuilder(BuildContext context, TutorRequest tutorRequest, int i, bool first, bool last) {
     final key = tutorRequest.id.toString();
     return MyTutorRequestItem(key: Key(key), tutorRequest: tutorRequest);
-  }
-
-  Widget _backgroundBuilder(BuildContext context, TutorRequest tutorRequest, int i, bool first, bool last) {
-    final key = "${tutorRequest.id}_background";
-    return CardBackground(key: Key(key));
   }
 
   @override

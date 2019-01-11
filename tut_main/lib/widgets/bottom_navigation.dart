@@ -62,20 +62,25 @@ class BottomNavigation extends StatelessWidget implements PreferredSizeWidget {
             containedInkWell: true,
             highlightShape: BoxShape.rectangle,
             onTap: onTap == null ? null : () => onTap(index),
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 4.0, left: 24.0, right: 24.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget> [
-                  Center(
-                    child: Icon(page.icon, color: iconColor)
-                  ),
-                  PaddedText(page.title,
-                    padding: const EdgeInsets.only(top: 2.0),
-                    style: textStyle.copyWith(color: iconColor)
-                  ),
-                ],
-              ),
+            child: Tooltip(
+              message: page.title,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 4.0, left: 24.0, right: 24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget> [
+                    Center(
+                      child: Icon(page.icon, color: iconColor)
+                    ),
+                    /*
+                    PaddedText(page.title,
+                      padding: const EdgeInsets.only(top: 2.0),
+                      style: textStyle.copyWith(color: iconColor)
+                    ),
+                    */
+                  ],
+                ),
+              )
             )
           )
         )

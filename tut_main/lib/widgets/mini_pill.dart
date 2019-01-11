@@ -1,7 +1,7 @@
 part of tut.widgets;
 
 class MiniPill extends StatelessWidget {
-  static const double widgetHeight = 20.0;
+  static const double widgetHeight = 22.0;
 
   static const EdgeInsets widgetPadding =
       EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0);

@@ -2,7 +2,7 @@ part of tut.widgets;
 
 class AccountPage extends Page {
   final IconData icon = OMIcons.accountCircle;
-  final String title = "account";
+  final String title = "Account";
 
   AccountPage({Key key}) : super(key: key);
 

@@ -32,10 +32,14 @@ import "theme.dart";
 part "widgets/cards/card.dart";
 part "widgets/cards/card_background.dart";
 part "widgets/cards/my_tutor_request_card.dart";
+part "widgets/cards/tutor_request_card.dart";
+part "widgets/cards/conversation_card.dart";
 
 // Pages.
 part "widgets/pages/page.dart";
 part "widgets/pages/my_requests_page.dart";
+part "widgets/pages/requests_page.dart";
+part "widgets/pages/messages_page.dart";
 part "widgets/pages/account_page.dart";
 
 // Header-related widgets.
