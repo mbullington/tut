@@ -40,7 +40,7 @@ class _MessagesPage extends State<MessagesPage> {
         slivers: <Widget>[
           Header(controller: controller),
           SliverGlueFixedList(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 28.0) + EdgeInsets.only(top: 16.0),
+            padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 28.0),
             widgets: <Widget>[
               Subtitle("Messages"),
             ],
@@ -49,7 +49,6 @@ class _MessagesPage extends State<MessagesPage> {
             data: model.data,
             builder: _itemBuilder,
             padding: const EdgeInsets.all(16.0),
-            divided: true,
           )
         ],
       )

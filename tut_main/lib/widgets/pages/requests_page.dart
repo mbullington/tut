@@ -31,9 +31,12 @@ class _RequestsPage extends State<RequestsPage> {
     return TutorRequestItem(key: Key(key), tutorRequest: tutorRequest);
   }
 
-  Widget _backgroundBuilder(BuildContext context, TutorRequest tutorRequest, int i, bool first, bool last) {
-    final key = "${tutorRequest.id}_background";
-    return CardBackground(key: Key(key));
+  Widget _dismissableBuilder(BuildContext context, Widget widget, entry, VoidCallback onDismissed) {
+    return TactileDismissable(
+      key: ValueKey("${entry.hashCode.toString()}_dismissible"),
+      child: widget,
+      background: CardBackground(),
+    );
   }
 
   @override
@@ -49,12 +52,27 @@ class _RequestsPage extends State<RequestsPage> {
           SliverGlueFixedList(
             padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 28.0) + EdgeInsets.only(top: 16.0),
             widgets: <Widget>[
-              Subtitle("I can\nhelp with…"),
+              Row(
+                children: <Widget>[
+                  Subtitle("I can\nhelp with…"),
+                  GradientButton(
+                    gradient: fancyGradient,
+                    child: Text("Manage"),
+                    elevation: 4.0,
+                    callback: () => {}
+                  )
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+              )
             ],
           ),
           SliverGlueGrid<TutorRequest>(
             data: model.data,
-            builder: _itemBuilder
+            builder: _itemBuilder,
+            dismissible: true,
+            dismissibleBuilder: _dismissableBuilder,
+            onDismissed: () => {},
           )
         ],
       )

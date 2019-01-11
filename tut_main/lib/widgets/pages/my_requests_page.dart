@@ -70,7 +70,7 @@ class _MyRequestsPage extends State<MyRequestsPage> {
                 alignment: Alignment.bottomCenter,
                 child: FlatButton(
                   onPressed: () => {},
-                  child: Text("SEE OTHER'S REQUESTS >")
+                  child: Text("See other's requests >")
                 )
               )
             ],
