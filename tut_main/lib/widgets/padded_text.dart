@@ -20,20 +20,18 @@ class PaddedText extends StatelessWidget {
 }
 
 class Subtitle extends StatelessWidget {
-  static const EdgeInsets widgetPadding =
-  EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0);
-
   final String text;
+  final Color color = Colors.black87;
 
   Subtitle(this.text, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return PaddedText(text,
-        style: Theme
-            .of(context)
-            .textTheme
-            .headline,
-        padding: widgetPadding);
+      style: textTheme.headline.copyWith(color: color),
+      padding: EdgeInsets.only(top: 8.0)
+    );
   }
 }

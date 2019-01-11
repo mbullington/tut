@@ -11,7 +11,7 @@ abstract class Model extends Listenable {
     final Type type = InheritedModel<T>.forRuntimeType().runtimeType;
     Widget widget = rebuildOnChange
         ? context.inheritFromWidgetOfExactType(type)
-        : context.ancestorWidgetOfExactType(type);
+        : context.ancestorInheritedElementForWidgetOfExactType(type)?.widget;
     return (widget is InheritedModel<T>) ? widget.model : null;
   }
 

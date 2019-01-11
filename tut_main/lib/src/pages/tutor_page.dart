@@ -1,17 +1,9 @@
 part of tut.pages;
 
-class TutorPageDefinition extends PageDefinition {
-  ValueKey get key => const Key("tutor_page");
+class TutorPage extends Page {
+  final IconData icon = OMIcons.attachMoney;
+  final String title = "tutor";
 
-  TutorPageDefinition({TickerProvider vsync})
-      : super(vsync: vsync, icon: Icons.star, title: "tutor");
-
-  Widget build(BuildContext context) {
-    return new TutorPage(key: key);
-  }
-}
-
-class TutorPage extends StatefulWidget {
   TutorPage({Key key}) : super(key: key);
 
   @override

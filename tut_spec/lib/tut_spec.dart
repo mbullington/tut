@@ -12,12 +12,17 @@ abstract class Unique {
 abstract class User implements Built<User, UserBuilder>, Unique {
   int get id;
 
+  @BuiltValueField(compare: false)
   String get name;
 
   @nullable
+  @BuiltValueField(compare: false)
   Uri get avatarUri;
 
+  @BuiltValueField(compare: false)
   bool get verified;
+  
+  @BuiltValueField(compare: false)
   double get rating;
 
   User._();
@@ -27,13 +32,19 @@ abstract class User implements Built<User, UserBuilder>, Unique {
 abstract class TutorRequest implements Built<TutorRequest, TutorRequestBuilder>, Unique {
   int get id;
 
+  @BuiltValueField(compare: false)
   User get user;
+
+  @BuiltValueField(compare: false)
   BuiltList<User> get acceptedTutors;
 
+  @BuiltValueField(compare: false)
   String get assignment;
+  @BuiltValueField(compare: false)
   String get className;
 
   @nullable
+  @BuiltValueField(compare: false)
   DateTime get dueDate;
 
   TutorRequest._();
@@ -42,14 +53,19 @@ abstract class TutorRequest implements Built<TutorRequest, TutorRequestBuilder>,
 
 abstract class Message implements Built<Message, MessageBuilder>, Unique {
   int get id;
+
+  @BuiltValueField(compare: false)
   User get user;
 
   // should eventually support some kind of Markdown?
+  @BuiltValueField(compare: false)
   String get rawText;
 
+  @BuiltValueField(compare: false)
   DateTime get timestamp;
 
   @nullable
+  @BuiltValueField(compare: false)
   BuiltList<Uri> get images;
 
   Message._();
@@ -59,9 +75,12 @@ abstract class Message implements Built<Message, MessageBuilder>, Unique {
 abstract class Conversation implements Built<Conversation, ConversationBuilder>, Unique {
   int get id;
 
+  @BuiltValueField(compare: false)
   BuiltList<User> get users;
+  @BuiltValueField(compare: false)
   TutorRequest get request;
 
+  @BuiltValueField(compare: false)
   BuiltList<Message> get messages;
 
   Conversation._();

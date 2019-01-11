@@ -1,16 +1,9 @@
 part of tut.pages;
 
-class AskHelpPageDefinition extends PageDefinition {
-  ValueKey get key => const Key("ask_help_page");
+class AskHelpPage extends Page {
+  final IconData icon = OMIcons.book;
+  final String title = "ask for help";
 
-  AskHelpPageDefinition({@required TickerProvider vsync}) : super(vsync: vsync, icon: Icons.edit, title: "ask for help");
-
-  Widget build(BuildContext context) {
-    return AskHelpPage(key: key);
-  }
-}
-
-class AskHelpPage extends StatefulWidget {
   AskHelpPage({Key key}) : super(key: key);
 
   @override
@@ -33,12 +26,12 @@ class _AskHelpPage extends State<AskHelpPage> {
     model.fetch();
   }
 
-  Widget _itemBuilder(BuildContext context, TutorRequest tutorRequest) {
+  Widget _itemBuilder(BuildContext context, TutorRequest tutorRequest, int i, bool first, bool last) {
     final key = tutorRequest.id.toString();
     return MyTutorRequestItem(key: Key(key), tutorRequest: tutorRequest);
   }
 
-  Widget _backgroundBuilder(BuildContext context, TutorRequest tutorRequest) {
+  Widget _backgroundBuilder(BuildContext context, TutorRequest tutorRequest, int i, bool first, bool last) {
     final key = "${tutorRequest.id}_background";
     return BasicCardBackground(key: Key(key), color: cardBackgroundColor);
   }
@@ -52,23 +45,21 @@ class _AskHelpPage extends State<AskHelpPage> {
       children: <Widget>[
         Header(),
         Flexible(
-          child: ScrollViewGlue<TutorRequest>(
-            type: ScrollViewGlueType.grid,
-            dismissable: ScrollViewGlueDismissable.none,
+          child: BrandScrollView(
             onRefresh: () => model.refresh(),
-            data: model.data,
-            headers: <Widget>[
-              Center(child: Subtitle("I need help with . . .")),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0) + const EdgeInsets.only(bottom: 20.0),
-                child: BrandTextField(
-                  controller: _controller,
-                  decoration: InputDecoration(prefixIcon: Icon(Icons.add), labelText: "Assignment")
-                )
+            slivers: <Widget>[
+              ScrollGlueWidgetList(
+                widgets: <Widget>[
+                  Align(alignment: Alignment.centerLeft, child: Subtitle("I need help with . . .")),
+                ],
               ),
+              ScrollGlueGrid(
+                data: model.data,
+                builder: _itemBuilder,
+                backgroundBuilder: _backgroundBuilder,
+                dismissable: ScrollGlueDismissable.linear,
+              )
             ],
-            builder: _itemBuilder,
-            backgroundBuilder: _backgroundBuilder,
           )
         )
       ],

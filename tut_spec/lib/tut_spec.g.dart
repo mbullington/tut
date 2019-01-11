@@ -60,20 +60,12 @@ class _$User extends User {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is User &&
-        id == other.id &&
-        name == other.name &&
-        avatarUri == other.avatarUri &&
-        verified == other.verified &&
-        rating == other.rating;
+    return other is User && id == other.id;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), name.hashCode), avatarUri.hashCode),
-            verified.hashCode),
-        rating.hashCode));
+    return $jf($jc(0, id.hashCode));
   }
 
   @override
@@ -204,25 +196,12 @@ class _$TutorRequest extends TutorRequest {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is TutorRequest &&
-        id == other.id &&
-        user == other.user &&
-        acceptedTutors == other.acceptedTutors &&
-        assignment == other.assignment &&
-        className == other.className &&
-        dueDate == other.dueDate;
+    return other is TutorRequest && id == other.id;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, id.hashCode), user.hashCode),
-                    acceptedTutors.hashCode),
-                assignment.hashCode),
-            className.hashCode),
-        dueDate.hashCode));
+    return $jf($jc(0, id.hashCode));
   }
 
   @override
@@ -367,20 +346,12 @@ class _$Message extends Message {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Message &&
-        id == other.id &&
-        user == other.user &&
-        rawText == other.rawText &&
-        timestamp == other.timestamp &&
-        images == other.images;
+    return other is Message && id == other.id;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), user.hashCode), rawText.hashCode),
-            timestamp.hashCode),
-        images.hashCode));
+    return $jf($jc(0, id.hashCode));
   }
 
   @override
@@ -514,18 +485,12 @@ class _$Conversation extends Conversation {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Conversation &&
-        id == other.id &&
-        users == other.users &&
-        request == other.request &&
-        messages == other.messages;
+    return other is Conversation && id == other.id;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), users.hashCode), request.hashCode),
-        messages.hashCode));
+    return $jf($jc(0, id.hashCode));
   }
 
   @override

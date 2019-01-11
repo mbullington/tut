@@ -1,9 +1,9 @@
-part of tut.pages;
+part of tut.widgets;
 
 class MyTutorRequestItem extends StatelessWidget {
   final TutorRequest tutorRequest;
 
-  final TextTheme textTheme = Brand.darkTheme.textTheme;
+  final TextTheme textTheme = getTextTheme(Typography(platform: defaultTargetPlatform).white);
 
   MyTutorRequestItem({Key key, @required this.tutorRequest}) : super(key: key);
 
@@ -38,17 +38,11 @@ class MyTutorRequestItem extends StatelessWidget {
     return Stack(
       alignment: Alignment.centerRight,
       children: <Widget>[
-        InsetForegroundFade(
-          color: BrandColors.purple,
-          orientation: Orientation.landscape,
-          insets: Tuple(0.0, 32.0),
-          blur: Tuple(0.0, 16.0),
-          child: InfiniteRowBuilder(
-              builder: _buildAvatar,
-              itemSpacing: 8.0,
-              itemWidth: Avatar.defaultRadius * 2,
-              limit: tutorRequest.acceptedTutors.length.toDouble()
-          ),
+        InfiniteRowBuilder(
+            builder: _buildAvatar,
+            itemSpacing: 8.0,
+            itemWidth: Avatar.defaultRadius * 2,
+            limit: tutorRequest.acceptedTutors.length.toDouble()
         ),
         Material(
             type: MaterialType.circle,
@@ -90,7 +84,7 @@ class MyTutorRequestItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasicCard(
+    return Card(
         onPressed: _onPressed,
         child: _buildInnerCard(context)
     );
