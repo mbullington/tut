@@ -113,6 +113,10 @@ TextTheme getTextTheme([TextTheme base]) {
 
   return base
       .copyWith(
+        display1: base.title.copyWith(
+          fontWeight: medium,
+          fontSize: 20.0
+        ),
         headline: base.headline.copyWith(
           fontWeight: medium,
           fontSize: 32.0),

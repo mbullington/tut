@@ -12,6 +12,8 @@ import "package:flutter/rendering.dart";
 
 import "package:gradient_widgets/gradient_widgets.dart";
 import "package:outline_material_icons/outline_material_icons.dart";
+import "package:transformer_page_view/transformer_page_view.dart";
+import "package:simple_logger/simple_logger.dart";
 
 import "package:quiver/collection.dart";
 
@@ -28,6 +30,9 @@ import "package:tut_spec/tut_spec.dart";
 import "models.dart";
 import "theme.dart";
 
+// Routes.
+part "widgets/routes/conversation_route.dart";
+
 // Cards.
 part "widgets/cards/card.dart";
 part "widgets/cards/card_background.dart";
@@ -36,6 +41,7 @@ part "widgets/cards/tutor_request_card.dart";
 part "widgets/cards/conversation_card.dart";
 
 // Pages.
+part "widgets/pages/zoom_out_page_transformer.dart";
 part "widgets/pages/page.dart";
 part "widgets/pages/my_requests_page.dart";
 part "widgets/pages/requests_page.dart";
@@ -63,3 +69,6 @@ part "widgets/infinite_row_builder.dart";
 
 // Physics for scroll views in the application.
 const kPhysics = const AlwaysScrollableScrollPhysics(parent: const BouncingScrollPhysics());
+
+// Logger.
+final logger = SimpleLogger();

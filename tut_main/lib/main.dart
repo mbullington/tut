@@ -66,18 +66,18 @@ class _MyApp extends State<MyApp> {
 
     SystemChrome.setSystemUIOverlayStyle(themeOverlayStyle);
 
-    return MaterialApp(
-      title: themeTitle,
-      theme: getTheme(),
-      home: Provider3(
-        _myTutorRequestModel,
-        _tutorRequestModel,
-        _conversationsModel,
-        child: ImageCacheProvider(
-          cache: _imageCache,
-          child: Home()
-        ),
-      )
+    return Provider3(
+      _myTutorRequestModel,
+      _tutorRequestModel,
+      _conversationsModel,
+      child: ImageCacheProvider(
+        cache: _imageCache,
+        child: MaterialApp(
+          title: themeTitle,
+          theme: getTheme(),
+          home: Home()
+        )
+      ),
     );
   }
 }

@@ -35,10 +35,13 @@ class Avatar extends StatelessWidget {
       );
     }
 
-    return SizedBox(
-      width: radius * 2,
-      height: radius * 2,
-      child: DecoratedBox(decoration: decoration)
+    return Hero(
+      tag: user.id,
+      child: SizedBox(
+        width: radius * 2,
+        height: radius * 2,
+        child: DecoratedBox(decoration: decoration)
+      )
     );
   }
 

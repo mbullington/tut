@@ -101,7 +101,7 @@ class BottomNavigation extends StatelessWidget implements PreferredSizeWidget {
       child: SizedBox(
         height: _kTabBarHeight + bottomPadding,
         child: Padding(
-          padding: EdgeInsets.only(bottom: bottomPadding),
+          padding: EdgeInsets.only(bottom: bottomPadding, left: 16.0, right: 16.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

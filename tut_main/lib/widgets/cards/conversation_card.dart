@@ -8,10 +8,6 @@ class ConversationCard extends StatelessWidget {
 
   ConversationCard({Key key, @required this.conversation, @required this.first, @required this.last}) : super(key: key);
 
-  void _onTap() {
-
-  }
-
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -45,7 +41,7 @@ class ConversationCard extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         trailing: DateMiniPill(conversation.messages.last.timestamp),
-        onTap: _onTap
+        onTap: () => ConversationRoute.routeTo(context, conversation)
       )
     );
   }

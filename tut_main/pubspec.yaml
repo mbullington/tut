@@ -7,17 +7,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  outline_material_icons: ^0.1.0
-  
-  gradient_widgets: ^0.3.0
-  color: any
-  sliver_glue:
-    path: ../../sliver_glue
-  transformer_page_view: ^0.1.4
 
+  outline_material_icons: ^0.1.0
+  gradient_widgets: ^0.3.0
+  transformer_page_view: ^0.1.4
+  simple_logger: ^0.7.4
+
+  color: any
   meta: "^1.1.5"
   intl: "^0.15.6"
   built_collection: ^4.0.0
+
+  sliver_glue:
+    path: ../../sliver_glue
 
   tut_spec:
     path: ../tut_spec
